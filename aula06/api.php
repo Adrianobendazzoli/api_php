@@ -17,7 +17,7 @@ $metodo= $_SERVER ['REQUEST_METHOD'];
     $arquivo = 'usuarios.json';
 
     //verifica se o arquivo existe, sxe não ele cria um com um array vazio
-    if (file_exists($arquivo)) {
+    if (!file_exists($arquivo)) {
         file_put_contents($arquivo, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     }
 
